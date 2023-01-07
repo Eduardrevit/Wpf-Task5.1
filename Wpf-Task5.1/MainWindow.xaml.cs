@@ -102,7 +102,7 @@ namespace Wpf_Task5._1
             }
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void OpenExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Текстовые файлы(*.txt)|*.txt|Все файлы (*.*)|*.*";
@@ -113,7 +113,8 @@ namespace Wpf_Task5._1
             }
 
         }
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+
+        private void SaveExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Текстовые файлы(*.txt)|*.txt|Все файлы (*.*)|*.*";
@@ -121,12 +122,9 @@ namespace Wpf_Task5._1
             {
                 File.WriteAllText(saveFileDialog.FileName, textBox.Text);
             }
-
-
-
         }
 
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        private void CloseExecuted(object sender, ExecutedRoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
